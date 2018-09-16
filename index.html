@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<style type="text/css">
+		#footer {
+		    position: fixed;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    background-color: grey;
+		    color: white;
+		    text-align: left;
+		    padding: 0px 30px;
+		}
+
+		#header {
+			left: 0;
+  			background: #555;
+  			position: fixed;
+  			top: 0;
+  			width: 100%;
+  			text-align: left;
+		    padding: 0px 30px;
+		}
+
+		.copyright-text {
+			font-size: 15px;
+			font-family: Roboto;
+		}
+	</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="footer"></div>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+	<script type="text/babel">
+	const Clock = function(props) {
+		console.log(props)
+
+		const date = new Date();
+		const thisYear = date.getFullYear();
+
+		return <p className="copyright-text" style={{ color : props.color }}>Copyright : {thisYear}</p>;
+	}
+
+	ReactDOM.render(<Clock color="#F1F1F1"/>, document.getElementById('header'));
+	ReactDOM.render(<Clock color="#FFF"/>, document.getElementById('footer'));
+	</script>
+</body>
+</html>
