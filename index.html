@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Document JSX</title>
+	<title>Document</title>
 </head>
 <body>
 	<div id="app">
@@ -11,10 +11,15 @@
 	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 	<script type="text/babel">
-		const Header = <h1>Hello World from React!</h1>;
-		/// React.createElement('h1', null, 'Hello World from React!');
-		
-		ReactDOM.render(Header, document.getElementById('app'));
+	const Clock = function() {
+
+		const date = new Date();
+		const thisYear = date.getFullYear();
+
+		return <h1>Copyright : {thisYear}</h1>;
+	}
+
+	ReactDOM.render(<Clock />, document.getElementById('app'));
 	</script>
 </body>
 </html>
