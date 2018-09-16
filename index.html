@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<style type="text/css">
+		#footer {
+		    position: fixed;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    background-color: grey;
+		    text-align: left;
+		    padding: 0px 30px;
+		}
+
+		#content {
+			left: 0;
+  			width: 100%;
+  			text-align: left;
+		}
+
+		.copyright-text {
+			font-size: 15px;
+			font-family: Roboto;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+	<script type="text/babel">
+	const Clock = function() {
+		const date = new Date();
+		const thisYear = date.getFullYear();
+
+		return <div id="footer"><p className="copyright-text" style={{ color: '#FFF' }}>Copyright : {thisYear}</p></div>;
+	}
+
+	const Content = function(props) {
+		console.log(props)
+
+		return <div id="content"><h3 style={{ color : props.color }}>Lorem Ipsum</h3></div>;
+	}
+
+	const App = function() {
+		return <div>
+			<Content color="#0097A7"/>
+			<Content color="#00BCD4"/>
+			<Content color="#03A9F4"/>
+			<Clock />
+		</div>;
+	}
+
+	ReactDOM.render(<App />, document.getElementById('app'));
+	</script>
+</body>
+</html>
