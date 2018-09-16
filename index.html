@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Document</title>
+	<title>Document Styling JSX</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<style type="text/css">
+		#footer {
+		    position: fixed;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    background-color: grey;
+		    color: white;
+		    text-align: left;
+		    padding: 0px 30px 0px 30px;
+		}
+
+		.copyright-text {
+			color: white;
+			font-size: 15px;
+			font-family: Roboto;
+		}
+	</style>
 </head>
 <body>
-	<div id="app">
+	<div id="footer">
 		
 	</div>
 	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -16,10 +37,10 @@
 		const date = new Date();
 		const thisYear = date.getFullYear();
 
-		return <h1>Copyright : {thisYear}</h1>;
+		return <p className="copyright-text">Copyright : {thisYear}</p>;
 	}
 
-	ReactDOM.render(<Clock />, document.getElementById('app'));
+	ReactDOM.render(<Clock />, document.getElementById('footer'));
 	</script>
 </body>
 </html>
